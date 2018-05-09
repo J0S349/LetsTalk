@@ -1,0 +1,141 @@
+{
+  "Networks":
+  {
+    "OUT": {
+      "ID": "1234",
+      "Fullname": "OUT and Allies Network",
+      "Description": "The mission of the OUT & Allies Network (OUT) is to connect the experience of the LGBT community to BlackRock’s principles by promoting a culture where employees feel comfortable sharing their stories and bringing their genuine selves to work",
+      "Link": "https://webster.bfm.com/myblk/community/employee-networks/blackrock-out-network-out",
+      "isPublic": true
+    },
+    "ABN": {
+      "ID": "2345",
+      "Fullname": "Ability Network",
+      "Description": "The Ability Network (ABN) provides a sense of community, advocacy, resources, and support for all types of disability-related issues within the firm. This includes support for employees with a disability, whether visible or invisible, managers, those caring for a loved one, and anyone interested in supporting the disability community.",
+      "Link": "https://webster.bfm.com/myblk/community/employee-networks/ability-network",
+      "isPublic": true
+    },
+    "BPN": {
+      "ID": "3456",
+      "Fullname": "Black Professionals Network",
+      "Description": "The Black Professionals Network is designed to help foster an environment for meaningful opportunities for black professionals to develop and advance their careers, share experiences, and enhance their impact, exposure, and engagement across the firm. It is open to anyone interested in supporting our black colleagues.",
+      "Link": "https://webster.bfm.com/myblk/community/employee-networks/black-professionals-network",
+      "isPublic": true
+    },
+    "FAB": {
+      "ID": "4567",
+      "Fullname": "Families at BlackRock",
+      "Description": "The mission of the Families at BlackRock Network (FAB) is to provide both educational and professional forums where employees can share their experience balancing separate work and family lives.",
+      "Link": "https://webster.bfm.com/myblk/community/employee-networks/families-at-blackrock",
+      "isPublic": true
+    },
+    "MCN": {
+      "ID": "5678",
+      "Fullname": "MultiCultural Network",
+      "Description": "The mission of the MultiCultural Network (MCN) is to engage and empower our global and culturally diverse workforce by fostering a collaborative, inclusive and innovative work environment.",
+      "Link": "https://webster.bfm.com/myblk/community/employee-networks/blackrock-multicultural-network-mcn",
+      "isPublic": true
+    },
+    "VET": {
+      "ID": "6789",
+      "Fullname": "Veterans Network",
+      "Description": "The mission of the Veterans Network (VET) is to deliver value for BlackRock, the firm’s employees and the veteran community through a variety of talent and engagement initiatives.",
+      "Link": "https://webster.bfm.com/myblk/community/employee-networks/blackrock-veterans-network-vet",
+      "isPublic": true
+    },
+    "WIN": {
+      "ID": "3234",
+      "Fullname": "Women's Initiative Network",
+      "Description": "The Women’s Initiative Network (WIN) was founded in 2006 with a single mission: to contribute to the success of the firm by engaging and fostering the full potential of BlackRock women. WIN has made it a priority to engage women around the world to build an inclusive community, invest in each other’s growth and celebrate diverse perspectives in order to help bridge the gender gap at all levels, including senior leadership roles.",
+      "Link": "https://webster.bfm.com/myblk/community/employee-networks/blackrock-womens-initiative-network-win",
+      "isPublic": true
+    }
+  },
+  "Posts": [
+    {
+      "ID": "ABC",
+      "Content": "How can we be more involved with our community here in SF?",
+      "Date": "12/32/2017",
+      "isPublic": true,
+      "UserID": "josanche",
+      "network": "MCN"
+    },
+    {
+      "ID": "BCD",
+      "Content": "Should we be maintaining different versions of Python within BLK?",
+      "Date": "12/32/2017",
+      "isPublic": true,
+      "UserID": "josanche",
+      "network": "Python"
+    },
+    {
+      "ID": "DBC",
+      "Content": "WIN will be hosting a networking event this Thursday, May 10, where we will talk about reducing the gender pay gap. Expect a calendar event in a couple of minutes",
+      "Date": "12/33/2017",
+      "isPublic": true,
+      "UserID": "josanche",
+      "network": "WIN"
+    }
+  ],
+  "NetworkPosts": [
+    {
+      "ID": "ABC123",
+      "NetworkID": "1234",
+      "PostID": "DBC"
+    }
+  ],
+  "Events": [
+    {
+      "ID": "dfa",
+      "name": "TTM",
+      "location": "8 FL Patio",
+      "description": "Join us for our next TTM, hope to see you there",
+      "date": "7/4/2018",
+      "newwork": ""
+    },
+    {
+      "ID": "dfa",
+      "name": "Cinco de Mayo",
+      "location": "8 FL Patio",
+      "description": "We will be hosting a Cinco de Mayo event, please join us",
+      "date": "5/4/2018",
+      "newwork": ""
+    }
+  ],
+  "Communities": {
+    "Python": {
+      "ID": "dafd",
+      "Fullname": "Python",
+      "Description": "An internal Python Developers Community within BlackRock",
+      "isPublic": true
+    },
+    "AI": {
+      "ID": "daf",
+      "Fullname": "Artificial Intelligence",
+      "Description": "An internal AI community within BlackRock",
+      "isPublic": true
+    },
+    "JAVA": {
+      "ID": "dafdfd",
+      "Fullname": "Java",
+      "Description": "An internal Java Developers community within BlackRock",
+      "isPublic": true
+    },
+    "Running": {
+      "ID": "ddfa",
+      "Fullname": "Running Club",
+      "Description": "Come run with us! We are a fun group to be a part of and we go for run daily at 5 PM",
+      "isPublic": true
+    }
+  },
+  "PendingEvents": [
+    {
+      "ID": "dfa",
+      "name": "WIN Network Event",
+      "location": "10 FL",
+      "description": "Join us for our event",
+      "date": "10/3/2018",
+      "network": "WIN"
+    }
+  ]
+}

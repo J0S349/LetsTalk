@@ -1,0 +1,28 @@
+body{
+    width: auto;
+}
+
+#postID {
+  font-family: sans-serif;
+  height: 100px;
+  font-size: 15px;
+  width: 100%;
+  padding-top: 0px;
+}
+
+textarea {
+  resize: none;
+  border-radius: 5px;
+}
+
+#submitButton {
+  font-size: 25px;
+  background-color: #00a4d3;
+  border-radius: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+label {
+  font-size: 20px;
+}

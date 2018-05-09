@@ -1,0 +1,12 @@
+.Events{
+  background-color: #00a4d3;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 15px;
+}
+
+.eventList {
+  padding-bottom: 10px;
+}
