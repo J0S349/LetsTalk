@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./networks.css";
 
 class NetworkList extends Component{
+
   render(){
     let { networks, host } = this.props
     return(

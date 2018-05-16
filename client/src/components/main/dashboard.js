@@ -9,22 +9,37 @@ class Dashboard extends Component {
 
     this.state = {
       data: jsonData,
-      networksData: jsonData['Networks'],
+      networksData: "",
       postData: jsonData['Posts'],
       networkPostData: jsonData['NetworkPosts'],
       events: jsonData['Events'],
       communities: jsonData['Communities'],
-      pendingEvents: jsonData['PendingEvents']
+      pendingEvents: jsonData['PendingEvents'],
     }
   }
+
+  componentDidMount(){
+    this.getNetworks()
+        .then(res => this.setState({networksData: res.data}))
+        .catch(err => alert(err))
+  }
+
+  getNetworks = async() => {
+    const response = await fetch('/api/get_networks')
+    const body = await response.json()
+
+    if (response.status !== 200 ) throw Error(body.message)
+    return body
+  }
+
   render(){
 
-    let { networksData, postData, events, communities, pendingEvents } = this.state;
-
+    let { networksData, postData, events, communities, pendingEvents, returnData } = this.state;
     // Creating array of network names
     let networkNames = [];
-    Object.keys(networksData).map((network) => {
-        networkNames.push(network);
+    Object.keys(networksData).map((index) => {
+      let network = networksData[index]
+        networkNames.push(network.Name);
     });
 
     let communityNames = [];
@@ -61,16 +76,13 @@ class Dashboard extends Component {
         <Route exact path="/">
           <Main networks={networkNames} communities={communityNames} posts={publicPost} events={ events } pendingEvents={ pendingEvents }/>
         </Route>
-        {Object.keys(networksData).map(function(network, i){
-          let networkInfo = networksData[network];
-          if(network === "MCN"){
-            return <Route exact path={"/networks/"+network}><Networks networkInfo={networkInfo} pageType={"network"} posts={MCNPosts}/></Route>
-          }else if(network === "WIN"){
-            return <Route exact path={"/networks/"+network}><Networks networkInfo={networkInfo} pageType={"network"} posts={WINPosts}/></Route>
-          }else{
-            return <Route exact path={"/networks/"+network}><Networks networkInfo={networkInfo} pageType={"network"} posts={[]}/></Route>
-          }
-        })}
+        {
+          Object.keys(networksData).map(function(index, i){
+            let networkInfo = networksData[index];
+
+            return <Route exact path={"/networks/"+networkInfo.Name }><Networks networkInfo={networkInfo} pageType={"network"} posts={[]}/></Route>
+          })
+        }
         {Object.keys(communities).map(function(index, i){
           let community = communities[index];
 

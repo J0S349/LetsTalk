@@ -13,7 +13,7 @@ class Main extends Component{
           <Row>
             <Col id="leftThread" md={3} xs={3}>
               <h2>Network Pages</h2>
-              <NetworkList networks={networks} host={'networks'}/>
+              <NetworkList networks={networks} host={'networks'} type={'networks'}/>
               <h2>Community Pages</h2>
               <NetworkList networks={communities} host={'communities'}/>
 

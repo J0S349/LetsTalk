@@ -8,11 +8,10 @@ class App extends Component {
   state = {
     response: '',
     data: {
-      ID: "daf",
-      Name: "OUT",
-      Fullname: "OUT and Allies Network",
-      Description: "The mission of the OUT & Allies Network (OUT) is to connect the experience of the LGBT community to BlackRock’s principles by promoting a culture where employees feel comfortable sharing their stories and bringing their genuine selves to work",
-      Link: "https://webster.bfm.com/myblk/community/employee-networks/blackrock-out-network-out",
+      Name: "ABN",
+      Fullname: "Ability Network",
+      Description: "The Ability Network (ABN) provides a sense of community, advocacy, resources, and support for all types of disability-related issues within the firm. This includes support for employees with a disability, whether visible or invisible, managers, those caring for a loved one, and anyone interested in supporting the disability community.",
+      Link: "https://webster.bfm.com/myblk/community/employee-networks/ability-network",
       DateCreated: "12/23/2018"
     }
   };

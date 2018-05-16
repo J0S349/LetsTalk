@@ -3,7 +3,6 @@ const { Schema } = mongoose;
 
 //Create Network Schema
 const networkSchema = new Schema({
-  ID: String,
   Name: String,
   Fullname: String,
   Description: String,

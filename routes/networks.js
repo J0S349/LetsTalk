@@ -7,17 +7,15 @@ module.exports = (app) => {
       console.log(req);
       network.find({}, (err, data) => {
         res.send({data: data});
-            })
+      })
     }
   );
 
   app.post(
     '/api/create_network',
     (req, res) => {
-      console.log("within network post: ", req.body);
       try{
         const newNetwork = new network({
-          ID: req.body.ID,
           Name: req.body.Name,
           Fullname: req.body.Fullname,
           Description: req.body.Description,
@@ -26,7 +24,7 @@ module.exports = (app) => {
         });
 
         newNetwork.save().then((doc) => {
-          console.log("made network");
+          console.log("Successfully inserted a new entry into network");
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify({network: doc}))
         });
