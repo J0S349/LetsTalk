@@ -12,7 +12,8 @@ class Post extends Component{
       value: '',
       placeholder: props.placeholder,
       isAnonymous: false,
-      isEnabled: (props.isEnabled || false)
+      isEnabled: (props.isEnabled || false),
+      networkName: (props.name || "")
     }
     autoBind(this);
   }
@@ -22,7 +23,8 @@ class Post extends Component{
     }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('A name was submitted: ' + this.state.value + ", Name: " + this.state.networkName);
+    
     event.preventDefault();
   }
   handleUnknownChange(event){

@@ -23,11 +23,11 @@ class MainThread extends Component{
   }
 
   render(){
-    let { placeholder, isEnabled, posts, submitText } = this.props;
+    let { placeholder, isEnabled, posts, submitText, name } = this.props;
     return(
       <div>
         <div id="post">
-          <Post placeholder={placeholder} isEnabled={isEnabled} submitText={submitText}/>
+          <Post placeholder={placeholder} name={name} isEnabled={isEnabled} submitText={submitText}/>
         </div>
         <div id="thread">
           { this.displayData(posts) }

@@ -8,11 +8,10 @@ class App extends Component {
   state = {
     response: '',
     data: {
-      Name: "ABN",
-      Fullname: "Ability Network",
-      Description: "The Ability Network (ABN) provides a sense of community, advocacy, resources, and support for all types of disability-related issues within the firm. This includes support for employees with a disability, whether visible or invisible, managers, those caring for a loved one, and anyone interested in supporting the disability community.",
-      Link: "https://webster.bfm.com/myblk/community/employee-networks/ability-network",
-      DateCreated: "12/23/2018"
+      Name: "WIN",
+      Fullname: "Women's Initiative Network",
+      Description: "The Women’s Initiative Network (WIN) was founded in 2006 with a single mission: to contribute to the success of the firm by engaging and fostering the full potential of BlackRock women. WIN has made it a priority to engage women around the world to build an inclusive community, invest in each other’s growth and celebrate diverse perspectives in order to help bridge the gender gap at all levels, including senior leadership roles.",
+      Link: "https://webster.bfm.com/myblk/community/employee-networks/blackrock-womens-initiative-network-win"
     }
   };
 
@@ -35,16 +34,17 @@ class App extends Component {
   };
 
   postAPI = async () => {
-    // fetch("/api/create_network", {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type' : 'application/json'
-    //   },
-    //   body: JSON.stringify(this.state.data)}
-    // )
-    // .then((res) => {
-    //   console.log("return response: ", res);
-    // });
+    fetch("/api/add_post", {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(this.state.data)}
+    )
+    .then((res) => {
+      return res;
+    })
+    .catch((err) => console.log(err));
   };
 
 

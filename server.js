@@ -10,12 +10,14 @@ const port = process.env.PORT || 5000;
 
 // Models
 require('./models/Network');
+require('./models/Event');
 
 // Routes
-require('./routes/networks.js')(app);
+require('./routes/networks')(app);
+require('./routes/events')(app);
 
 // Connecting to MongoDB for test database
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/app');
 const db = mongoose.connection;
 
 db.on('error', err => {

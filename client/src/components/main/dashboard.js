@@ -12,16 +12,19 @@ class Dashboard extends Component {
       networksData: "",
       postData: jsonData['Posts'],
       networkPostData: jsonData['NetworkPosts'],
-      events: jsonData['Events'],
-      communities: jsonData['Communities'],
-      pendingEvents: jsonData['PendingEvents'],
+      events: "",
     }
   }
 
   componentDidMount(){
     this.getNetworks()
         .then(res => this.setState({networksData: res.data}))
-        .catch(err => alert(err))
+        .catch(err => alert(err));
+
+    this.getEvents()
+        .then(res => this.setState({ events: res.data }))
+        .catch(err => console.error(err));
+
   }
 
   getNetworks = async() => {
@@ -32,20 +35,29 @@ class Dashboard extends Component {
     return body
   }
 
+  getEvents = async() => {
+    const response = await fetch('/api/get_events');
+    const body = await response.json()
+
+    if (response.status !== 200) throw Error(body.message)
+    return body 
+  }
+
   render(){
 
     let { networksData, postData, events, communities, pendingEvents, returnData } = this.state;
     // Creating array of network names
     let networkNames = [];
+    let communityNames = [];
     Object.keys(networksData).map((index) => {
       let network = networksData[index]
+
+      if(network.Type == "Network")
         networkNames.push(network.Name);
+      else 
+        communityNames.push(network.Name);
     });
 
-    let communityNames = [];
-    Object.keys(communities).map((network) => {
-        communityNames.push(network);
-    });
 
     // Getting public Post
     let publicPost = [];
@@ -79,18 +91,10 @@ class Dashboard extends Component {
         {
           Object.keys(networksData).map(function(index, i){
             let networkInfo = networksData[index];
-
-            return <Route exact path={"/networks/"+networkInfo.Name }><Networks networkInfo={networkInfo} pageType={"network"} posts={[]}/></Route>
-          })
-        }
-        {Object.keys(communities).map(function(index, i){
-          let community = communities[index];
-
-          if(index === "Python"){
-            return <Route exact path={"/communities/"+index}><Networks networkInfo={community} pageType={"community"} posts={PythonPosts}/></Route>
-          }else{
-            return <Route exact path={"/communities/"+index}><Networks networkInfo={community} pageType={"community"} posts={[]}/></Route>
-          }
+            if( networkInfo.Type === "Network")
+              return <Route exact path={"/networks/"+networkInfo.Name }><Networks networkInfo={networkInfo} pageType={"network"} posts={[]}/></Route>
+            else
+              return <Route exact path={"/communities/"+networkInfo.Name }><Networks networkInfo={networkInfo} pageType={"community"} posts={[]}/></Route>
 
           })
         }

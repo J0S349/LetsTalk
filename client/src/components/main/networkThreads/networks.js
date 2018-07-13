@@ -17,7 +17,7 @@ class Networks extends Component{
             <About name={networkInfo.Fullname}/>
           </Col>
           <Col xs={6} md={6}>
-            <MainThread placeholder="What do you want to talk about?" isEnabled={true} posts={posts} submitText={"Post"}/>
+            <MainThread placeholder="What do you want to talk about?" name={networkInfo.Name} isEnabled={true} posts={posts} submitText={"Post"}/>
           </Col>
           <Col xs={3} md={3}>
             <h2 id="missionStatement">Our Mission</h2>
